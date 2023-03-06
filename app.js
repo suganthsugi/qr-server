@@ -49,12 +49,12 @@ app.get('/:id', async (req, res)=>{
 app.post('/update/:id', async (req, res) => {
     try {
         const currRo = await Ro.findById(req.params.id);
-        const { userName, phno, reason, trust, feedback } = req.body;
-        currRo.userName=userName;
-        currRo.phno=phno;
-        currRo.reason=reason;
-        currRo.trust=trust;
-        currRo.feedback=feedback;
+        // const { userName, phno, reason, trust, feedback } = req.body;
+        // currRo.userName=userName;
+        // currRo.phno=phno;
+        // currRo.reason=reason;
+        // currRo.trust=trust;
+        // currRo.feedback=feedback;
         currRo.isVerified=true;
         await currRo.save()
         res.status(200).json({
